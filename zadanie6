@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #Laboratorium 6
 echo "Lab 6."
 if [ $# -eq 0 ]; then

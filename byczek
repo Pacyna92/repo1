@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-def sdd(x,y):
-	return x+y
+def sdd(x,y,u):
+	return (x+y)*u
 
-print (sdd(1,2))
+#wynik (x+y) * u
+print (sdd(1,2,4))
