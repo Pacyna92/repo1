@@ -1,0 +1,14 @@
+#!/bin/bash
+echo "Lukasz Pacak"
+#Lab 4
+#Zadanie 1.
+echo "Rozwiazanie zadania 1"
+ls -l ~/ | sort -bnr +4
+#Zadanie 2.
+echo "Rozwiazanie zadania 2"
+ls -l /etc | sort -bn +4 | head -n 5
+#Zadanie 3.
+echo "Rozwiazanie zadania 3"
+ls -alt /tmp | grep ^d
+#Zadanie 4.
+find /usr -type d -name jvm* 

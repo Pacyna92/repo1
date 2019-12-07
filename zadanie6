@@ -1,0 +1,34 @@
+#!/bin/bash
+#Laboratorium 6
+echo "Lab 6."
+if [ $# -eq 0 ]; then
+	echo "Nie podales zadnych argumentow. Poprawna skladnia: skrypt plik.txt folder1 folder2..."
+	exit 1
+else
+	if [ -e "$1" ]; then
+		if [ ! -f "$1" ]; then
+			echo "Plik $1 nie jest zwyklym plikiem"
+			exit 1
+		else
+			echo "Plik $1 jest zwyklym plikiem, zostal on posortowany oraz zapisany jako $1-sorted"
+			
+			sort $1 > $1-sorted
+		fi
+	else
+		echo "Plik $1 nie istnieje"
+		exit 1
+	fi
+	for i in "${@:2}"
+	do
+		if [ -d "$i" ]; then
+			cp $1-sorted $i
+			echo "Skopiowano $1-sorted do folderu $i"
+		elif [ ! -d "$i" ]; then
+			mkdir -p $i
+			cp $1-sorted $i
+			echo "Folder $i nie istnieje, tworze folder...Utworzono"
+			echo "Skopiowano $1-sorted do folderu $i"
+		fi
+	done	
+fi
+
