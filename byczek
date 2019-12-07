@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#testowy commit
 def sdd(x,y,u):
 	return (x+y)*u
 
